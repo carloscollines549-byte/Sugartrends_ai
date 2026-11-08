@@ -83,4 +83,4 @@ jobs:
           set -euo pipefail
           gh api "repos/$GH_REPO/commits/$GH_SHA/comments" \
             --method POST \
-            --input - < review-summary.md
+            -f body="$(cat review-summary.md)"
